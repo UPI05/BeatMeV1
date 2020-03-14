@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{% load static %}
+		<title> BEAT ME | Can you ??? </title>
+		<link rel = "stylesheet" type = "text/css" href = "{% static 'css/bootstrap.css' %}">
+		<link rel = "stylesheet" type = "text/css" href = "{% static 'css/main.css' %}">
+		<script src = "{% static 'js/jquery.js' %}"></script>
+		<script src = "{% static 'js/bootstrap.js' %}"></script>
+		<script src = "{% static 'js/main.js' %}"></script>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLongTitle">Thông báo từ admin:</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					  <span aria-hidden="true">&times;</span>
+					</button>
+					</div>
+					<div class="modal-body">
+					{% for x in alertDt %}
+						{% if x.status %}
+							{{x.text}}
+						{% endif %}
+						</br>
+					{% endfor %}
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			function getCookie(cname) {
+				var name = cname + "=";
+				var decodedCookie = decodeURIComponent(document.cookie);
+				var ca = decodedCookie.split(';');
+				for(var i = 0; i < ca.length; i++) {
+					var c = ca[i];
+					while (c.charAt(0) == ' ') {
+					  c = c.substring(1);
+					}
+					if (c.indexOf(name) == 0) {
+					  return c.substring(name.length, c.length);
+					}
+				}
+				return "";
+			}
+			if (getCookie('admin') != 'minhnghianguyen') {
+				$('#exampleModalLong').modal('show');
+				document.cookie = "admin=minhnghianguyen";
+			}
+		</script>
+		<div class = "contain">
+			<div class = "left">
+				<a href = "https://www.fb.com/minhnghianguyen7575">
+					<div class = "badge badge-danger">
+						Minh Nghia Nguyen
+					</div>
+					<div class = "avatar1">
+						<img src = "{% static 'img/avatar1.jpg' %}" />
+					</div>
+				</a>
+				<div class="spinner-border spinner-border-sm" role="status">
+				  <span class="sr-only">Loading...</span>
+				</div>
+				<div class="spinner-grow spinner-grow-sm" role="status">
+				  <span class="sr-only">Loading...</span>
+				</div>
+				<p>
+				  <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapse" aria-expanded="false" aria-controls="collapse">
+					Bot info
+				  </button>
+				</p>
+				<div class="collapse" id="collapse">
+				<div class="card card-body">
+					Win:
+					{% for x in botDt %}
+						{{x.win}}
+					{% endfor %}
+					</br>
+					Lose:
+					{% for x in botDt %}
+						{{x.lose}}
+					{% endfor %}
+					</br>
+					Draw:
+					{% for x in botDt %}
+						{{x.draw}}
+					{% endfor %}
+					</br>
+					Elo:
+					{% for x in botDt %}
+						{{x.elo}}
+					{% endfor %}
+				  </div>
+				</div>
+				<div class = "count">
+					<a href='https://www.symptoma.it/'>Symptoma®</a>
+					<script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=f3eb5634969d56d302adfb4b74fe86ec0a96af4a'></script>
+					<script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/645689/t/0"></script>
+				</div>
+				<div style = "float: left; margin-top: 10px; color: Indigo;"> To be ranked: </div>
+				<div class="input-group input-group-sm mb-3">
+				  <div class="input-group-prepend">
+					<span class="input-group-text" id="basic-addon1">@</span>
+				  </div>
+				  <input type="text" onkeyup = "setUsername()" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+				</div>
+			</div>
+			<div class = "mid">
+				<div class = "mRow">
+					<div class = "mCol p1x1" onclick = "go(1, 1)">
+					
+					</div>
+					<div class = "mCol p1x2" onclick = "go(1, 2)">
+					
+					</div>
+					<div class = "mCol p1x3" onclick = "go(1, 3)">
+					
+					</div>
+					<div class = "mCol p1x4" onclick = "go(1, 4)">
+					
+					</div>
+					<div class = "mCol p1x5" onclick = "go(1, 5)">
+					
+					</div>
+					<div class = "mCol p1x6" onclick = "go(1, 6)">
+					
+					</div>
+					<div class = "mCol p1x7" onclick = "go(1, 7)">
+					
+					</div>
+					<div class = "mCol p1x8" onclick = "go(1, 8)">
+					
+					</div>
+					<div class = "mCol p1x9" onclick = "go(1, 9)">
+					
+					</div>
+					<div class = "mCol p1x10" onclick = "go(1, 10)">
+					
+					</div>
+					<div class = "mCol p1x11" onclick = "go(1, 11)">
+					
+					</div>
+					<div class = "mCol p1x12" onclick = "go(1, 12)">
+					
+					</div>
+					<div class = "mCol p1x13" onclick = "go(1, 13)">
+					
+					</div>
+					<div class = "mCol p1x14" onclick = "go(1, 14)">
+					
+					</div>
+					<div class = "mCol p1x15" onclick = "go(1, 15)">
+					
+					</div>
+					<div class = "mCol p1x16" onclick = "go(1, 16)">
+					
+					</div>
+					<div class = "mCol p1x17" onclick = "go(1, 17)">
+					
+					</div>
+					<div class = "mCol p1x18" onclick = "go(1, 18)">
+					
+					</div>
+					<div class = "mCol p1x19" onclick = "go(1, 19)">
+					
+					</div>
+				</div>
+				<div class = "mRow">
+					<div class = "mCol p2x1" onclick = "go(2, 1)">
+					
+					</div>
+					<div class = "mCol p2x2" onclick = "go(2, 2)">
+					
+					</div>
+					<div class = "mCol p2x3" onclick = "go(2, 3)">
+					
+					</div>
+					<div class = "mCol p2x4" onclick = "go(2, 4)">
+					
+					</div>
+					<div class = "mCol p2x5" onclick = "go(2, 5)">
+					
+					</div>
+					<div class = "mCol p2x6" onclick = "go(2, 6)">
+					
+					</div>
+					<div class = "mCol p2x7" onclick = "go(2, 7)">
+					
+					</div>
+					<div class = "mCol p2x8" onclick = "go(2, 8)">
+					
+					</div>
+					<div class = "mCol p2x9" onclick = "go(2, 9)">
+					
+					</div>
+					<div class = "mCol p2x10" onclick = "go(2, 10)">
+					
+					</div>
+					<div class = "mCol p2x11" onclick = "go(2, 11)">
+					
+					</div>
+					<div class = "mCol p2x12" onclick = "go(2, 12)">
+					
+					</div>
+					<div class = "mCol p2x13" onclick = "go(2, 13)">
+					
+					</div>
+					<div class = "mCol p2x14" onclick = "go(2, 14)">
+					
+					</div>
+					<div class = "mCol p2x15" onclick = "go(2, 15)">
+					
+					</div>
+					<div class = "mCol p2x16" onclick = "go(2, 16)">
+					
+					</div>
+					<div class = "mCol p2x17" onclick = "go(2, 17)">
+					
+					</div>
+					<div class = "mCol p2x18" onclick = "go(2, 18)">
+					
+					</div>
+					<div class = "mCol p2x19" onclick = "go(2, 19)">
+					
+					</div>
+				</div>
+				<div class = "mRow">
+					<div class = "mCol p3x1" onclick = "go(3, 1)">
+					
+					</div>
+					<div class = "mCol p3x2" onclick = "go(3, 2)">
+					
+					</div>
+					<div class = "mCol p3x3" onclick = "go(3, 3)">
+					
+					</div>
+					<div class = "mCol p3x4" onclick = "go(3, 4)">
+					
+					</div>
+					<div class = "mCol p3x5" onclick = "go(3, 5)">
+					
+					</div>
+					<div class = "mCol p3x6" onclick = "go(3, 6)">
+					
+					</div>
+					<div class = "mCol p3x7" onclick = "go(3, 7)">
+					
+					</div>
+					<div class = "mCol p3x8" onclick = "go(3, 8)">
+					
+					</div>
+					<div class = "mCol p3x9" onclick = "go(3, 9)">
+					
+					</div>
+					<div class = "mCol p3x10" onclick = "go(3, 10)">
+					
+					</div>
+					<div class = "mCol p3x11" onclick = "go(3, 11)">
+					
+					</div>
+					<div class = "mCol p3x12" onclick = "go(3, 12)">
+					
+					</div>
+					<div class = "mCol p3x13" onclick = "go(3, 13)">
+					
+					</div>
+					<div class = "mCol p3x14" onclick = "go(3, 14)">
+					
+					</div>
+					<div class = "mCol p3x15" onclick = "go(3, 15)">
+					
+					</div>
+					<div class = "mCol p3x16" onclick = "go(3, 16)">
+					
+					</div>
+					<div class = "mCol p3x17" onclick = "go(3, 17)">
+					
+					</div>
+					<div class = "mCol p3x18" onclick = "go(3, 18)">
+					
+					</div>
+					<div class = "mCol p3x19" onclick = "go(3, 19)">
+					
+					</div>
+				</div><div class = "mRow">
+					<div class = "mCol p4x1" onclick = "go(4, 1)">
+					
+					</div>
+					<div class = "mCol p4x2" onclick = "go(4, 2)">
+					
+					</div>
+					<div class = "mCol p4x3" onclick = "go(4, 3)">
+					
+					</div>
+					<div class = "mCol p4x4" onclick = "go(4, 4)">
+					
+					</div>
+					<div class = "mCol p4x5" onclick = "go(4, 5)">
+					
+					</div>
+					<div class = "mCol p4x6" onclick = "go(4, 6)">
+					
+					</div>
+					<div class = "mCol p4x7" onclick = "go(4, 7)">
+					
+					</div>
+					<div class = "mCol p4x8" onclick = "go(4, 8)">
+					
+					</div>
+					<div class = "mCol p4x9" onclick = "go(4, 9)">
+					
+					</div>
+					<div class = "mCol p4x10" onclick = "go(4, 10)">
+					
+					</div>
+					<div class = "mCol p4x11" onclick = "go(4, 11)">
+					
+					</div>
+					<div class = "mCol p4x12" onclick = "go(4, 12)">
+					
+					</div>
+					<div class = "mCol p4x13" onclick = "go(4, 13)">
+					
+					</div>
+					<div class = "mCol p4x14" onclick = "go(4, 14)">
+					
+					</div>
+					<div class = "mCol p4x15" onclick = "go(4, 15)">
+					
+					</div>
+					<div class = "mCol p4x16" onclick = "go(4, 16)">
+					
+					</div>
+					<div class = "mCol p4x17" onclick = "go(4, 17)">
+					
+					</div>
+					<div class = "mCol p4x18" onclick = "go(4, 18)">
+					
+					</div>
+					<div class = "mCol p4x19" onclick = "go(4, 19)">
+					
+					</div>
+				</div><div class = "mRow">
+					<div class = "mCol p5x1" onclick = "go(5, 1)">
+					
+					</div>
+					<div class = "mCol p5x2" onclick = "go(5, 2)">
+					
+					</div>
+					<div class = "mCol p5x3" onclick = "go(5, 3)">
+					
+					</div>
+					<div class = "mCol p5x4" onclick = "go(5, 4)">
+					
+					</div>
+					<div class = "mCol p5x5" onclick = "go(5, 5)">
+					
+					</div>
+					<div class = "mCol p5x6" onclick = "go(5, 6)">
+					
+					</div>
+					<div class = "mCol p5x7" onclick = "go(5, 7)">
+					
+					</div>
+					<div class = "mCol p5x8" onclick = "go(5, 8)">
+					
+					</div>
+					<div class = "mCol p5x9" onclick = "go(5, 9)">
+					
+					</div>
+					<div class = "mCol p5x10" onclick = "go(5, 10)">
+					
+					</div>
+					<div class = "mCol p5x11" onclick = "go(5, 11)">
+					
+					</div>
+					<div class = "mCol p5x12" onclick = "go(5, 12)">
+					
+					</div>
+					<div class = "mCol p5x13" onclick = "go(5, 13)">
+					
+					</div>
+					<div class = "mCol p5x14" onclick = "go(5, 14)">
+					
+					</div>
+					<div class = "mCol p5x15" onclick = "go(5, 15)">
+					
+					</div>
+					<div class = "mCol p5x16" onclick = "go(5, 16)">
+					
+					</div>
+					<div class = "mCol p5x17" onclick = "go(5, 17)">
+					
+					</div>
+					<div class = "mCol p5x18" onclick = "go(5, 18)">
+					
+					</div>
+					<div class = "mCol p5x19" onclick = "go(5, 19)">
+					
+					</div>
+				</div>
+				<div class = "mRow">
+					<div class = "mCol p6x1" onclick = "go(6, 1)">
+					
+					</div>
+					<div class = "mCol p6x2" onclick = "go(6, 2)">
+					
+					</div>
+					<div class = "mCol p6x3" onclick = "go(6, 3)">
+					
+					</div>
+					<div class = "mCol p6x4" onclick = "go(6, 4)">
+					
+					</div>
+					<div class = "mCol p6x5" onclick = "go(6, 5)">
+					
+					</div>
+					<div class = "mCol p6x6" onclick = "go(6, 6)">
+					
+					</div>
+					<div class = "mCol p6x7" onclick = "go(6, 7)">
+					
+					</div>
+					<div class = "mCol p6x8" onclick = "go(6, 8)">
+					
+					</div>
+					<div class = "mCol p6x9" onclick = "go(6, 9)">
+					
+					</div>
+					<div class = "mCol p6x10" onclick = "go(6, 10)">
+					
+					</div>
+					<div class = "mCol p6x11" onclick = "go(6, 11)">
+					
+					</div>
+					<div class = "mCol p6x12" onclick = "go(6, 12)">
+					
+					</div>
+					<div class = "mCol p6x13" onclick = "go(6, 13)">
+					
+					</div>
+					<div class = "mCol p6x14" onclick = "go(6, 14)">
+					
+					</div>
+					<div class = "mCol p6x15" onclick = "go(6, 15)">
+					
+					</div>
+					<div class = "mCol p6x16" onclick = "go(6, 16)">
+					
+					</div>
+					<div class = "mCol p6x17" onclick = "go(6, 17)">
+					
+					</div>
+					<div class = "mCol p6x18" onclick = "go(6, 18)">
+					
+					</div>
+					<div class = "mCol p6x19" onclick = "go(6, 19)">
+					
+					</div>
+				</div>
+				<div class = "mRow">
+					<div class = "mCol p7x1" onclick = "go(7, 1)">
+					
+					</div>
+					<div class = "mCol p7x2" onclick = "go(7, 2)">
+					
+					</div>
+					<div class = "mCol p7x3" onclick = "go(7, 3)">
+					
+					</div>
+					<div class = "mCol p7x4" onclick = "go(7, 4)">
+					
+					</div>
+					<div class = "mCol p7x5" onclick = "go(7, 5)">
+					
+					</div>
+					<div class = "mCol p7x6" onclick = "go(7, 6)">
+					
+					</div>
+					<div class = "mCol p7x7" onclick = "go(7, 7)">
+					
+					</div>
+					<div class = "mCol p7x8" onclick = "go(7, 8)">
+					
+					</div>
+					<div class = "mCol p7x9" onclick = "go(7, 9)">
+					
+					</div>
+					<div class = "mCol p7x10" onclick = "go(7, 10)">
+					
+					</div>
+					<div class = "mCol p7x11" onclick = "go(7, 11)">
+					
+					</div>
+					<div class = "mCol p7x12" onclick = "go(7, 12)">
+					
+					</div>
+					<div class = "mCol p7x13" onclick = "go(7, 13)">
+					
+					</div>
+					<div class = "mCol p7x14" onclick = "go(7, 14)">
+					
+					</div>
+					<div class = "mCol p7x15" onclick = "go(7, 15)">
+					
+					</div>
+					<div class = "mCol p7x16" onclick = "go(7, 16)">
+					
+					</div>
+					<div class = "mCol p7x17" onclick = "go(7, 17)">
+					
+					</div>
+					<div class = "mCol p7x18" onclick = "go(7, 18)">
+					
+					</div>
+					<div class = "mCol p7x19" onclick = "go(7, 19)">
+					
+					</div>
+				</div>
+				<div class = "mRow">
+					<div class = "mCol p8x1" onclick = "go(8, 1)">
+					
+					</div>
+					<div class = "mCol p8x2" onclick = "go(8, 2)">
+					
+					</div>
+					<div class = "mCol p8x3" onclick = "go(8, 3)">
+					
+					</div>
+					<div class = "mCol p8x4" onclick = "go(8, 4)">
+					
+					</div>
+					<div class = "mCol p8x5" onclick = "go(8, 5)">
+					
+					</div>
+					<div class = "mCol p8x6" onclick = "go(8, 6)">
+					
+					</div>
+					<div class = "mCol p8x7" onclick = "go(8, 7)">
+					
+					</div>
+					<div class = "mCol p8x8" onclick = "go(8, 8)">
+					
+					</div>
+					<div class = "mCol p8x9" onclick = "go(8, 9)">
+					
+					</div>
+					<div class = "mCol p8x10" onclick = "go(8, 10)">
+					
+					</div>
+					<div class = "mCol p8x11" onclick = "go(8, 11)">
+					
+					</div>
+					<div class = "mCol p8x12" onclick = "go(8, 12)">
+					
+					</div>
+					<div class = "mCol p8x13" onclick = "go(8, 13)">
+					
+					</div>
+					<div class = "mCol p8x14" onclick = "go(8, 14)">
+					
+					</div>
+					<div class = "mCol p8x15" onclick = "go(8, 15)">
+					
+					</div>
+					<div class = "mCol p8x16" onclick = "go(8, 16)">
+					
+					</div>
+					<div class = "mCol p8x17" onclick = "go(8, 17)">
+					
+					</div>
+					<div class = "mCol p8x18" onclick = "go(8, 18)">
+					
+					</div>
+					<div class = "mCol p8x19" onclick = "go(8, 19)">
+					
+					</div>
+				</div>
+				<div class = "mRow">
+					<div class = "mCol p9x1" onclick = "go(9, 1)">
+					
+					</div>
+					<div class = "mCol p9x2" onclick = "go(9, 2)">
+					
+					</div>
+					<div class = "mCol p9x3" onclick = "go(9, 3)">
+					
+					</div>
+					<div class = "mCol p9x4" onclick = "go(9, 4)">
+					
+					</div>
+					<div class = "mCol p9x5" onclick = "go(9, 5)">
+					
+					</div>
+					<div class = "mCol p9x6" onclick = "go(9, 6)">
+					
+					</div>
+					<div class = "mCol p9x7" onclick = "go(9, 7)">
+					
+					</div>
+					<div class = "mCol p9x8" onclick = "go(9, 8)">
+					
+					</div>
+					<div class = "mCol p9x9" onclick = "go(9, 9)">
+					
+					</div>
+					<div class = "mCol p9x10" onclick = "go(9, 10)">
+					
+					</div>
+					<div class = "mCol p9x11" onclick = "go(9, 11)">
+					
+					</div>
+					<div class = "mCol p9x12" onclick = "go(9, 12)">
+					
+					</div>
+					<div class = "mCol p9x13" onclick = "go(9, 13)">
+					
+					</div>
+					<div class = "mCol p9x14" onclick = "go(9, 14)">
+					
+					</div>
+					<div class = "mCol p9x15" onclick = "go(9, 15)">
+					
+					</div>
+					<div class = "mCol p9x16" onclick = "go(9, 16)">
+					
+					</div>
+					<div class = "mCol p9x17" onclick = "go(9, 17)">
+					
+					</div>
+					<div class = "mCol p9x18" onclick = "go(9, 18)">
+					
+					</div>
+					<div class = "mCol p9x19" onclick = "go(9, 19)">
+					
+					</div>
+				</div>
+				<div class = "mRow">
+					<div class = "mCol p10x1" onclick = "go(10, 1)">
+					
+					</div>
+					<div class = "mCol p10x2" onclick = "go(10, 2)">
+					
+					</div>
+					<div class = "mCol p10x3" onclick = "go(10, 3)">
+					
+					</div>
+					<div class = "mCol p10x4" onclick = "go(10, 4)">
+					
+					</div>
+					<div class = "mCol p10x5" onclick = "go(10, 5)">
+					
+					</div>
+					<div class = "mCol p10x6" onclick = "go(10, 6)">
+					
+					</div>
+					<div class = "mCol p10x7" onclick = "go(10, 7)">
+					
+					</div>
+					<div class = "mCol p10x8" onclick = "go(10, 8)">
+					
+					</div>
+					<div class = "mCol p10x9" onclick = "go(10, 9)">
+					
+					</div>
+					<div class = "mCol p10x10" onclick = "go(10, 10)">
+					
+					</div>
+					<div class = "mCol p10x11" onclick = "go(10, 11)">
+					
+					</div>
+					<div class = "mCol p10x12" onclick = "go(10, 12)">
+					
+					</div>
+					<div class = "mCol p10x13" onclick = "go(10, 13)">
+					
+					</div>
+					<div class = "mCol p10x14" onclick = "go(10, 14)">
+					
+					</div>
+					<div class = "mCol p10x15" onclick = "go(10, 15)">
+					
+					</div>
+					<div class = "mCol p10x16" onclick = "go(10, 16)">
+					
+					</div>
+					<div class = "mCol p10x17" onclick = "go(10, 17)">
+					
+					</div>
+					<div class = "mCol p10x18" onclick = "go(10, 18)">
+					
+					</div>
+					<div class = "mCol p10x19" onclick = "go(10, 19)">
+					
+					</div>
+				</div>
+				<div class = "mRow">
+					<div class = "mCol p11x1" onclick = "go(11, 1)">
+					
+					</div>
+					<div class = "mCol p11x2" onclick = "go(11, 2)">
+					
+					</div>
+					<div class = "mCol p11x3" onclick = "go(11, 3)">
+					
+					</div>
+					<div class = "mCol p11x4" onclick = "go(11, 4)">
+					
+					</div>
+					<div class = "mCol p11x5" onclick = "go(11, 5)">
+					
+					</div>
+					<div class = "mCol p11x6" onclick = "go(11, 6)">
+					
+					</div>
+					<div class = "mCol p11x7" onclick = "go(11, 7)">
+					
+					</div>
+					<div class = "mCol p11x8" onclick = "go(11, 8)">
+					
+					</div>
+					<div class = "mCol p11x9" onclick = "go(11, 9)">
+					
+					</div>
+					<div class = "mCol p11x10" onclick = "go(11, 10)">
+					
+					</div>
+					<div class = "mCol p11x11" onclick = "go(11, 11)">
+					
+					</div>
+					<div class = "mCol p11x12" onclick = "go(11, 12)">
+					
+					</div>
+					<div class = "mCol p11x13" onclick = "go(11, 13)">
+					
+					</div>
+					<div class = "mCol p11x14" onclick = "go(11, 14)">
+					
+					</div>
+					<div class = "mCol p11x15" onclick = "go(11, 15)">
+					
+					</div>
+					<div class = "mCol p11x16" onclick = "go(11, 16)">
+					
+					</div>
+					<div class = "mCol p11x17" onclick = "go(11, 17)">
+					
+					</div>
+					<div class = "mCol p11x18" onclick = "go(11, 18)">
+					
+					</div>
+					<div class = "mCol p11x19" onclick = "go(11, 19)">
+					
+					</div>
+				</div>
+				<div class = "mRow">
+					<div class = "mCol p12x1" onclick = "go(12, 1)">
+					
+					</div>
+					<div class = "mCol p12x2" onclick = "go(12, 2)">
+					
+					</div>
+					<div class = "mCol p12x3" onclick = "go(12, 3)">
+					
+					</div>
+					<div class = "mCol p12x4" onclick = "go(12, 4)">
+					
+					</div>
+					<div class = "mCol p12x5" onclick = "go(12, 5)">
+					
+					</div>
+					<div class = "mCol p12x6" onclick = "go(12, 6)">
+					
+					</div>
+					<div class = "mCol p12x7" onclick = "go(12, 7)">
+					
+					</div>
+					<div class = "mCol p12x8" onclick = "go(12, 8)">
+					
+					</div>
+					<div class = "mCol p12x9" onclick = "go(12, 9)">
+					
+					</div>
+					<div class = "mCol p12x10" onclick = "go(12, 10)">
+					
+					</div>
+					<div class = "mCol p12x11" onclick = "go(12, 11)">
+					
+					</div>
+					<div class = "mCol p12x12" onclick = "go(12, 12)">
+					
+					</div>
+					<div class = "mCol p12x13" onclick = "go(12, 13)">
+					
+					</div>
+					<div class = "mCol p12x14" onclick = "go(12, 14)">
+					
+					</div>
+					<div class = "mCol p12x15" onclick = "go(12, 15)">
+					
+					</div>
+					<div class = "mCol p12x16" onclick = "go(12, 16)">
+					
+					</div>
+					<div class = "mCol p12x17" onclick = "go(12, 17)">
+					
+					</div>
+					<div class = "mCol p12x18" onclick = "go(12, 18)">
+					
+					</div>
+					<div class = "mCol p12x19" onclick = "go(12, 19)">
+					
+					</div>
+				</div>
+				<div class = "mRow">
+					<div class = "mCol p13x1" onclick = "go(13, 1)">
+					
+					</div>
+					<div class = "mCol p13x2" onclick = "go(13, 2)">
+					
+					</div>
+					<div class = "mCol p13x3" onclick = "go(13, 3)">
+					
+					</div>
+					<div class = "mCol p13x4" onclick = "go(13, 4)">
+					
+					</div>
+					<div class = "mCol p13x5" onclick = "go(13, 5)">
+					
+					</div>
+					<div class = "mCol p13x6" onclick = "go(13, 6)">
+					
+					</div>
+					<div class = "mCol p13x7" onclick = "go(13, 7)">
+					
+					</div>
+					<div class = "mCol p13x8" onclick = "go(13, 8)">
+					
+					</div>
+					<div class = "mCol p13x9" onclick = "go(13, 9)">
+					
+					</div>
+					<div class = "mCol p13x10" onclick = "go(13, 10)">
+					
+					</div>
+					<div class = "mCol p13x11" onclick = "go(13, 11)">
+					
+					</div>
+					<div class = "mCol p13x12" onclick = "go(13, 12)">
+					
+					</div>
+					<div class = "mCol p13x13" onclick = "go(13, 13)">
+					
+					</div>
+					<div class = "mCol p13x14" onclick = "go(13, 14)">
+					
+					</div>
+					<div class = "mCol p13x15" onclick = "go(13, 15)">
+					
+					</div>
+					<div class = "mCol p13x16" onclick = "go(13, 16)">
+					
+					</div>
+					<div class = "mCol p13x17" onclick = "go(13, 17)">
+					
+					</div>
+					<div class = "mCol p13x18" onclick = "go(13, 18)">
+					
+					</div>
+					<div class = "mCol p13x19" onclick = "go(13, 19)">
+					
+					</div>
+				</div>
+				<div class = "mRow">
+					<div class = "mCol p14x1" onclick = "go(14, 1)">
+					
+					</div>
+					<div class = "mCol p14x2" onclick = "go(14, 2)">
+					
+					</div>
+					<div class = "mCol p14x3" onclick = "go(14, 3)">
+					
+					</div>
+					<div class = "mCol p14x4" onclick = "go(14, 4)">
+					
+					</div>
+					<div class = "mCol p14x5" onclick = "go(14, 5)">
+					
+					</div>
+					<div class = "mCol p14x6" onclick = "go(14, 6)">
+					
+					</div>
+					<div class = "mCol p14x7" onclick = "go(14, 7)">
+					
+					</div>
+					<div class = "mCol p14x8" onclick = "go(14, 8)">
+					
+					</div>
+					<div class = "mCol p14x9" onclick = "go(14, 9)">
+					
+					</div>
+					<div class = "mCol p14x10" onclick = "go(14, 10)">
+					
+					</div>
+					<div class = "mCol p14x11" onclick = "go(14, 11)">
+					
+					</div>
+					<div class = "mCol p14x12" onclick = "go(14, 12)">
+					
+					</div>
+					<div class = "mCol p14x13" onclick = "go(14, 13)">
+					
+					</div>
+					<div class = "mCol p14x14" onclick = "go(14, 14)">
+					
+					</div>
+					<div class = "mCol p14x15" onclick = "go(14, 15)">
+					
+					</div>
+					<div class = "mCol p14x16" onclick = "go(14, 16)">
+					
+					</div>
+					<div class = "mCol p14x17" onclick = "go(14, 17)">
+					
+					</div>
+					<div class = "mCol p14x18" onclick = "go(14, 18)">
+					
+					</div>
+					<div class = "mCol p14x19" onclick = "go(14, 19)">
+					
+					</div>
+				</div>
+				<div class = "mRow">
+					<div class = "mCol p15x1" onclick = "go(15, 1)">
+					
+					</div>
+					<div class = "mCol p15x2" onclick = "go(15, 2)">
+					
+					</div>
+					<div class = "mCol p15x3" onclick = "go(15, 3)">
+					
+					</div>
+					<div class = "mCol p15x4" onclick = "go(15, 4)">
+					
+					</div>
+					<div class = "mCol p15x5" onclick = "go(15, 5)">
+					
+					</div>
+					<div class = "mCol p15x6" onclick = "go(15, 6)">
+					
+					</div>
+					<div class = "mCol p15x7" onclick = "go(15, 7)">
+					
+					</div>
+					<div class = "mCol p15x8" onclick = "go(15, 8)">
+					
+					</div>
+					<div class = "mCol p15x9" onclick = "go(15, 9)">
+					
+					</div>
+					<div class = "mCol p15x10" onclick = "go(15, 10)">
+					
+					</div>
+					<div class = "mCol p15x11" onclick = "go(15, 11)">
+					
+					</div>
+					<div class = "mCol p15x12" onclick = "go(15, 12)">
+					
+					</div>
+					<div class = "mCol p15x13" onclick = "go(15, 13)">
+					
+					</div>
+					<div class = "mCol p15x14" onclick = "go(15, 14)">
+					
+					</div>
+					<div class = "mCol p15x15" onclick = "go(15, 15)">
+					
+					</div>
+					<div class = "mCol p15x16" onclick = "go(15, 16)">
+					
+					</div>
+					<div class = "mCol p15x17" onclick = "go(15, 17)">
+					
+					</div>
+					<div class = "mCol p15x18" onclick = "go(15, 18)">
+					
+					</div>
+					<div class = "mCol p15x19" onclick = "go(15, 19)">
+					
+					</div>
+				</div>
+				<div class = "mRow">
+					<div class = "mCol p16x1" onclick = "go(16, 1)">
+					
+					</div>
+					<div class = "mCol p16x2" onclick = "go(16, 2)">
+					
+					</div>
+					<div class = "mCol p16x3" onclick = "go(16, 3)">
+					
+					</div>
+					<div class = "mCol p16x4" onclick = "go(16, 4)">
+					
+					</div>
+					<div class = "mCol p16x5" onclick = "go(16, 5)">
+					
+					</div>
+					<div class = "mCol p16x6" onclick = "go(16, 6)">
+					
+					</div>
+					<div class = "mCol p16x7" onclick = "go(16, 7)">
+					
+					</div>
+					<div class = "mCol p16x8" onclick = "go(16, 8)">
+					
+					</div>
+					<div class = "mCol p16x9" onclick = "go(16, 9)">
+					
+					</div>
+					<div class = "mCol p16x10" onclick = "go(16, 10)">
+					
+					</div>
+					<div class = "mCol p16x11" onclick = "go(16, 11)">
+					
+					</div>
+					<div class = "mCol p16x12" onclick = "go(16, 12)">
+					
+					</div>
+					<div class = "mCol p16x13" onclick = "go(16, 13)">
+					
+					</div>
+					<div class = "mCol p16x14" onclick = "go(16, 14)">
+					
+					</div>
+					<div class = "mCol p16x15" onclick = "go(16, 15)">
+					
+					</div>
+					<div class = "mCol p16x16" onclick = "go(16, 16)">
+					
+					</div>
+					<div class = "mCol p16x17" onclick = "go(16, 17)">
+					
+					</div>
+					<div class = "mCol p16x18" onclick = "go(16, 18)">
+					
+					</div>
+					<div class = "mCol p16x19" onclick = "go(16, 19)">
+					
+					</div>
+				</div>
+				<div class = "mRow">
+					<div class = "mCol p17x1" onclick = "go(17, 1)">
+					
+					</div>
+					<div class = "mCol p17x2" onclick = "go(17, 2)">
+					
+					</div>
+					<div class = "mCol p17x3" onclick = "go(17, 3)">
+					
+					</div>
+					<div class = "mCol p17x4" onclick = "go(17, 4)">
+					
+					</div>
+					<div class = "mCol p17x5" onclick = "go(17, 5)">
+					
+					</div>
+					<div class = "mCol p17x6" onclick = "go(17, 6)">
+					
+					</div>
+					<div class = "mCol p17x7" onclick = "go(17, 7)">
+					
+					</div>
+					<div class = "mCol p17x8" onclick = "go(17, 8)">
+					
+					</div>
+					<div class = "mCol p17x9" onclick = "go(17, 9)">
+					
+					</div>
+					<div class = "mCol p17x10" onclick = "go(17, 10)">
+					
+					</div>
+					<div class = "mCol p17x11" onclick = "go(17, 11)">
+					
+					</div>
+					<div class = "mCol p17x12" onclick = "go(17, 12)">
+					
+					</div>
+					<div class = "mCol p17x13" onclick = "go(17, 13)">
+					
+					</div>
+					<div class = "mCol p17x14" onclick = "go(17, 14)">
+					
+					</div>
+					<div class = "mCol p17x15" onclick = "go(17, 15)">
+					
+					</div>
+					<div class = "mCol p17x16" onclick = "go(17, 16)">
+					
+					</div>
+					<div class = "mCol p17x17" onclick = "go(17, 17)">
+					
+					</div>
+					<div class = "mCol p17x18" onclick = "go(17, 18)">
+					
+					</div>
+					<div class = "mCol p17x19" onclick = "go(17, 19)">
+					
+					</div>
+				</div>
+				<div class = "mRow">
+					<div class = "mCol p18x1" onclick = "go(18, 1)">
+					
+					</div>
+					<div class = "mCol p18x2" onclick = "go(18, 2)">
+					
+					</div>
+					<div class = "mCol p18x3" onclick = "go(18, 3)">
+					
+					</div>
+					<div class = "mCol p18x4" onclick = "go(18, 4)">
+					
+					</div>
+					<div class = "mCol p18x5" onclick = "go(18, 5)">
+					
+					</div>
+					<div class = "mCol p18x6" onclick = "go(18, 6)">
+					
+					</div>
+					<div class = "mCol p18x7" onclick = "go(18, 7)">
+					
+					</div>
+					<div class = "mCol p18x8" onclick = "go(18, 8)">
+					
+					</div>
+					<div class = "mCol p18x9" onclick = "go(18, 9)">
+					
+					</div>
+					<div class = "mCol p18x10" onclick = "go(18, 10)">
+					
+					</div>
+					<div class = "mCol p18x11" onclick = "go(18, 11)">
+					
+					</div>
+					<div class = "mCol p18x12" onclick = "go(18, 12)">
+					
+					</div>
+					<div class = "mCol p18x13" onclick = "go(18, 13)">
+					
+					</div>
+					<div class = "mCol p18x14" onclick = "go(18, 14)">
+					
+					</div>
+					<div class = "mCol p18x15" onclick = "go(18, 15)">
+					
+					</div>
+					<div class = "mCol p18x16" onclick = "go(18, 16)">
+					
+					</div>
+					<div class = "mCol p18x17" onclick = "go(18, 17)">
+					
+					</div>
+					<div class = "mCol p18x18" onclick = "go(18, 18)">
+					
+					</div>
+					<div class = "mCol p18x19" onclick = "go(18, 19)">
+					
+					</div>
+				</div>
+				<div class = "mRow">
+					<div class = "mCol p19x1" onclick = "go(19, 1)">
+					
+					</div>
+					<div class = "mCol p19x2" onclick = "go(19, 2)">
+					
+					</div>
+					<div class = "mCol p19x3" onclick = "go(19, 3)">
+					
+					</div>
+					<div class = "mCol p19x4" onclick = "go(19, 4)">
+					
+					</div>
+					<div class = "mCol p19x5" onclick = "go(19, 5)">
+					
+					</div>
+					<div class = "mCol p19x6" onclick = "go(19, 6)">
+					
+					</div>
+					<div class = "mCol p19x7" onclick = "go(19, 7)">
+					
+					</div>
+					<div class = "mCol p19x8" onclick = "go(19, 8)">
+					
+					</div>
+					<div class = "mCol p19x9" onclick = "go(19, 9)">
+					
+					</div>
+					<div class = "mCol p19x10" onclick = "go(19, 10)">
+					
+					</div>
+					<div class = "mCol p19x11" onclick = "go(19, 11)">
+					
+					</div>
+					<div class = "mCol p19x12" onclick = "go(19, 12)">
+					
+					</div>
+					<div class = "mCol p19x13" onclick = "go(19, 13)">
+					
+					</div>
+					<div class = "mCol p19x14" onclick = "go(19, 14)">
+					
+					</div>
+					<div class = "mCol p19x15" onclick = "go(19, 15)">
+					
+					</div>
+					<div class = "mCol p19x16" onclick = "go(19, 16)">
+					
+					</div>
+					<div class = "mCol p19x17" onclick = "go(19, 17)">
+					
+					</div>
+					<div class = "mCol p19x18" onclick = "go(19, 18)">
+					
+					</div>
+					<div class = "mCol p19x19" onclick = "go(19, 19)">
+					
+					</div>
+				</div>
+			</div>
+			<div class = "right">
+				<span>
+					<h5 class = "badge badge-dark"><b> Best players</b>: </h5>
+					<p class = "badge badge-primary">1. <i>callmerocker</i></p>
+					<p class = "badge badge-primary">2. <i>btsss</i></p>
+					<p class = "badge badge-primary">3. <i>triplekill</i></p>
+					<p class = "badge badge-primary">4. <i>jack99</i></p>
+					<p class = "badge badge-primary">5. <i>bedep2912</i></p>
+					<p class = "badge badge-primary">6. <i>doantrang21</i></p>
+					<p class = "badge badge-primary">7. <i>ilovecoding</i></p>
+					<p class = "badge badge-primary">8. <i>xaolin219</i></p>
+					<p class = "badge badge-primary">9. <i>thehealer</i></p>
+					<p class = "badge badge-primary">10. <i>ngaoda</i></p>
+				</span>
+				<div class = "user2 badge badge-success">
+					YOU	
+				</div>
+				<div class = "avatar2">
+					<img src = "{% static 'img/avatar2.jpg' %}" />
+				</div>
+			</div>
+		</div>
+		<div class = "alert alert-primary">
+			<b> Luật: Tick được 5 quân liên tiếp thẳng hàng là thắng! </b>
+		</div>
+		
+	</body>
+</html>

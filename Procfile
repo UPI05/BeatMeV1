@@ -1,0 +1,1 @@
+web: gunicorn beatme.wsgi --log-file -

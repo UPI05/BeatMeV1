@@ -1,0 +1,93 @@
+body {
+	color: MediumOrchid;
+	background-color: MintCream;
+}
+.contain {
+	width: 800px;
+	height: 540px;
+	margin: 0 auto;
+}
+.left {
+	width:125px;
+	height: 540px;
+	float: left;
+}
+.avatar1 {
+	width: 98px;
+	height: 98px;
+	float: left;
+}
+.avatar1 img {
+	width: 100%;
+	height: 100%;
+	border-radius: 100px;
+	border: 1px solid MediumVioletRed;
+}
+.btn-info {
+	margin-top: 10px;
+	padding: 3px;
+}
+.count {
+	float: left;
+	margin-top: 10px;
+	border-top: 2px solid blue;
+}
+.mid {
+	color: green;
+	margin-left: 5px;
+	text-align: center;
+	width: 533px;
+	height:533px;
+	float: left;
+	border: 5px solid RebeccaPurple;
+	border-radius: 5px;
+	box-sizing: content-box;
+}
+.right span p {
+	margin-bottom: 0px;
+	cursor: pointer;
+}
+.mRow {
+	width: 533px;
+	height: 27px;
+	float: left;
+	margin-top: 1px;
+}
+.mCol {
+	width: 27px;
+	float: left;
+	height: 27px;
+	margin-left: 1px;
+	background-color: SkyBlue;
+	cursor: pointer;
+}
+.right {
+	width: 100px;
+	height: 540px;
+	float: left;
+	margin-left: 20px;
+}
+.user2 {
+	margin-top: 148px;
+	float: left;
+	text-align: center;
+}
+.avatar2 {
+	width: 98px;
+	height: 98px;
+	float: left;
+	margin-top: 2px;
+}
+.avatar2 img {
+	width: 100%;
+	height: 100%;
+	border-radius: 100px;
+	border: 1px solid MediumVioletRed;
+}
+.alert {
+	width: 600px;
+	height: 50px;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 10px;
+}
