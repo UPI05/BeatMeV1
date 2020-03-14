@@ -163,7 +163,7 @@ def evaluate(x, y, st):
     if check4(False, 4, 1, st) >= 3: ans = -1000
     elif check4(False, 4, 1, st) >= 2: ans = -980
     elif check4(False, 4, 1, st) >= 1: ans = -960
-    elif check4(True, 4, 3, st) >= 3: ans = -800
+    elif check4(True, 4, 1, st) >= 3: ans = -800
     elif check4(True, 4, 1, st) >= 2: ans = -780
     elif check4(True, 4, 1, st) >= 1: ans = -760
     elif check4(False, 4, 2, st) >= 3: ans = 1000
