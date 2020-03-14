@@ -5,10 +5,14 @@ import random as rd
 # Create your views here.
 def index(request):
     return render(request, 'pages/index.html', {'botDt': botInfo.objects.all(), 'alertDt': alertDt.objects.all()})
+def handle404(request, exception = None):
+    return render(request, 'pages/404.html', status=404)
+def handle500(request, exception = None):
+    return render(request, 'pages/500.html', status=500)
+    
 
 stat = []
 MAX, MIN = 10000, -10000
-
 def check4(deny, k, ch, st):
     op = 2
     if ch == 2: op = 1

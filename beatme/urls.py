@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.conf.urls import include, url
+from django.conf.urls import include, url, handler404, handler500
 from caro import views as Caro
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Caro.index),
     path('getmove/', Caro.getMove)
 ]
+handler404 = Caro.handle404
+handler500 = Caro.handle500
